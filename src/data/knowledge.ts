@@ -1,0 +1,7 @@
+import type { KnowledgeArticle } from "@/lib/assistant";
+export const knowledgeArticles: KnowledgeArticle[] = [
+  { id: "evidence-integrity", title: "Evidence integrity", summary: "Every evidence object is hashed with SHA-256, appended to PostgreSQL, retained in immutable object storage, and never updated in place.", content: "Verification recomputes the digest. Superseding evidence receives a new identifier and preserves the earlier record.", tags: ["evidence", "hash", "immutable", "retention"] },
+  { id: "control-mapping", title: "Cross-framework control mapping", summary: "One implemented control can map to multiple framework requirements without duplicating evidence.", content: "Each mapping names its exact requirement and preserves framework version for audit exports.", tags: ["control", "soc 2", "iso 27001", "mapping"] },
+  { id: "collector-access", title: "Collector least privilege", summary: "Automated collectors use dedicated read-only identities scoped to the evidence required by their mapped tests.", content: "Credential values are never stored in evidence metadata or exposed to the assistant.", tags: ["collector", "least privilege", "cloud", "credential"] },
+  { id: "ai-boundary", title: "Compliance AI boundary", summary: "The copilot summarizes opted-in metadata and cited evidence but never produces an audit opinion or exports raw evidence implicitly.", content: "A user with the relevant permission approves every narrative and export.", tags: ["ai", "compliance", "narrative", "audit opinion"] },
+];

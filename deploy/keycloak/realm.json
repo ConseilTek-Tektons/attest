@@ -1,0 +1,30 @@
+{
+  "realm": "attest",
+  "enabled": true,
+  "displayName": "Attest local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "attest-web",
+      "name": "Attest Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "attest-owners" },
+    { "name": "attest-admins" },
+    { "name": "compliance-managers" },
+    { "name": "control-owners" },
+    { "name": "external-auditors" },
+    { "name": "evidence-operators" }
+  ]
+}

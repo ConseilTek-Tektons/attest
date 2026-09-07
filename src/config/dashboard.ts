@@ -1,0 +1,51 @@
+export type DashboardItem = { id: number; primary: string; secondary: string; tertiary: string; status: string; accent: "lime" | "violet" | "cyan" };
+type DashboardConfig = { eyebrow: string; heading: string; summary: string; primaryAction: string; secondaryAction: string; secondaryNotice: string; managePermission: string; metricLabel: string; metrics: { label: string; value: string; change: string; context: string; tone: "positive" | "warning"; progress: string }[]; trend: { label: string; value: number }[]; listTitle: string; workspaceAction: string; items: DashboardItem[]; sideTitle: string; sideSubtitle: string; sideItems: { title: string; detail: string; value: string; warning?: boolean }[]; insightTitle: string; insightBody: string; insightNotice: string; itemNoun: string; modalEyebrow: string; modalTitle: string; formFields: { name: string; label: string; placeholder: string }[]; defaultSecondary: string; defaultTertiary: string; newItemStatus: string; policyPreview: string; submitLabel: string };
+
+export const dashboard: DashboardConfig = {
+  eyebrow: "CONTINUOUS COMPLIANCE · AUDIT WINDOW 2026",
+  heading: "Evidence is current. Three controls need owners.",
+  summary: "Control mappings, collector results, access reviews, and immutable evidence remain inside your cloud boundary.",
+  primaryAction: "Run collector",
+  secondaryAction: "Build evidence bundle",
+  secondaryNotice: "Evidence bundle queued with a dated manifest and SHA-256 hashes.",
+  managePermission: "evidence.collect",
+  metricLabel: "Compliance readiness",
+  metrics: [
+    { label: "Controls passing", value: "184 / 196", change: "93.9%", context: "across two frameworks", tone: "positive", progress: "94%" },
+    { label: "Fresh evidence", value: "97%", change: "6 items", context: "expire this week", tone: "warning", progress: "97%" },
+    { label: "Access reviews", value: "82%", change: "9 pending", context: "due September 15", tone: "warning", progress: "82%" },
+    { label: "Policy acknowledgements", value: "99.2%", change: "3 people", context: "outstanding", tone: "positive", progress: "99%" },
+  ],
+  trend: [71, 74, 78, 82, 88, 91, 94].map((value, index) => ({ label: String(index), value })),
+  listTitle: "Control evidence",
+  workspaceAction: "Open control workspace",
+  items: [
+    { id: 1, primary: "CC6.1 · Logical access", secondary: "SOC 2 / ISO A.5.15", tertiary: "GitHub collector", status: "Passing", accent: "lime" },
+    { id: 2, primary: "CC7.2 · Vulnerability response", secondary: "SOC 2 / ISO A.8.8", tertiary: "Scanner evidence stale", status: "Review", accent: "violet" },
+    { id: 3, primary: "A.5.23 · Cloud services", secondary: "ISO 27001", tertiary: "Azure Policy", status: "Passing", accent: "cyan" },
+    { id: 4, primary: "CC1.4 · Personnel lifecycle", secondary: "SOC 2", tertiary: "HRIS collector", status: "Passing", accent: "lime" },
+  ],
+  sideTitle: "Collector health",
+  sideSubtitle: "Least-privilege read paths",
+  sideItems: [
+    { title: "AWS estate", detail: "3 accounts · 4,802 resources", value: "Current" },
+    { title: "Azure estate", detail: "Policy drift in one subscription", value: "Review", warning: true },
+    { title: "Identity and GitHub", detail: "Last run 18 minutes ago", value: "Current" },
+  ],
+  insightTitle: "One failed test affects both frameworks.",
+  insightBody: "The stale vulnerability-scanner result maps to SOC 2 CC7.2 and ISO 27001 A.8.8. Refreshing one source closes both evidence gaps.",
+  insightNotice: "Control narrative opened with the exact mappings and evidence hashes.",
+  itemNoun: "Collector run",
+  modalEyebrow: "RUN COLLECTOR",
+  modalTitle: "Collect fresh evidence",
+  formFields: [
+    { name: "source", label: "Evidence source", placeholder: "Azure Policy" },
+    { name: "scope", label: "Scope", placeholder: "Production subscriptions" },
+    { name: "control", label: "Control mapping", placeholder: "CC7.2, A.8.8" },
+  ],
+  defaultSecondary: "Production estate",
+  defaultTertiary: "Unmapped",
+  newItemStatus: "Queued",
+  policyPreview: "The collector receives read-only credentials. Evidence is hashed, appended, and retained under the object-store immutability policy.",
+  submitLabel: "Run collector",
+};
