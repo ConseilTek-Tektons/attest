@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="public/brand/mark-light.png" alt="ConseilTek" width="120" />
+  <img src="public/brand/logo.png" alt="ConseilTek" width="180" />
   <h1>Attest</h1>
   <p><strong>Continuous compliance evidence, collected in your account.</strong></p>
   <p>SOC 2 and ISO mappings · immutable evidence · access reviews · enterprise SSO · configurable RBAC · grounded AI</p>
 </div>
 
-[![CI](https://github.com/ConseilTek-Tektons/attest/actions/workflows/ci.yml/badge.svg)](https://github.com/ConseilTek-Tektons/attest/actions/workflows/ci.yml) [![CodeQL](https://github.com/ConseilTek-Tektons/attest/actions/workflows/codeql.yml/badge.svg)](https://github.com/ConseilTek-Tektons/attest/actions/workflows/codeql.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-a3ff12)](LICENSE)
+[![CI](https://github.com/ConseilTek-Tektons/attest/actions/workflows/ci.yml/badge.svg)](https://github.com/ConseilTek-Tektons/attest/actions/workflows/ci.yml) [![CodeQL](https://github.com/ConseilTek-Tektons/attest/actions/workflows/codeql.yml/badge.svg)](https://github.com/ConseilTek-Tektons/attest/actions/workflows/codeql.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-222c62)](LICENSE)
 
 Attest turns controls into repeatable tests and verifiable evidence without moving the compliance record outside your cloud boundary. One control can map to multiple frameworks, collectors run with read-only identities, and every evidence object is hashed and append-only. This repository ships the application and complete AWS/Azure deployment package.
 
